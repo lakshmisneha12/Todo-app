@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* THEMES */
+body.dark {
+    background: #0f172a;
+    color: white;
+}
+
+body.light {
+    background: #f1f5f9;
+    color: #020617;
+}
+
+/* CONTAINER */
+.container {
+    width: 380px;
+    margin: 50px auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+body.light .container {
+    background: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PROGRESS */
+.progress-box {
+    margin: 15px 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+    transition: width 0.3s;
+}
+
+/* INPUT */
+.input-box {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.input-box input,
+.input-box button {
+    padding: 8px;
+}
+
+.input-box input {
+    flex: 1;
+}
+
+/* FILTERS */
+.filters {
+    display: flex;
+    margin: 10px 0;
+}
+
+.filters button {
+    flex: 1;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.filters .active {
+    background: #38bdf8;
+}
+
+/* TASK */
+li {
+    list-style: none;
+    background: #020617;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn 0.3s ease;
+}
+
+body.light li {
+    background: #e5e7eb;
+}
+
+li.completed {
+    opacity: 0.6;
+}
+
+/* TASK INFO */
+.task-info span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-info small {
+    display: block;
+    font-size: 12px;
+}
+
+/* ICONS */
+li.completed .task-info span::before {
+    content: "✔️ ";
+}
+
+li:not(.completed) .task-info span::before {
+    content: "⏳ ";
+}
+
+/* STATUS BADGE */
+.status {
+    margin-top: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status.pending {
+    background: orange;
+    color: black;
+}
+
+.status.completed {
+    background: #22c55e;
+    color: black;
+}
+
+/* OVERDUE */
+.overdue {
+    border-left: 5px solid red;
+}
+
+/* ACTIONS */
+.actions button {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
